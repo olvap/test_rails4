@@ -2,6 +2,11 @@ class PostsController < InheritedResources::Base
   before_filter :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @q = Post.search(params[:q])
+    @posts = @q.result(:distinct => true)
+    index!
+  end
   # POST /posts
   # POST /posts.json
   def create
