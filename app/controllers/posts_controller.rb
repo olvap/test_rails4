@@ -4,7 +4,7 @@ class PostsController < InheritedResources::Base
 
   def index
     @q = Post.search(params[:q])
-    @posts = @q.result(:distinct => true)
+    @posts = @q.result(:distinct => true).page params[:page]
     index!
   end
   # POST /posts

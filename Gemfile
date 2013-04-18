@@ -25,6 +25,7 @@ gem 'simple_form'
 gem 'inherited_resources'
 gem 'devise'
 gem 'ransack', git: 'https://github.com/spectator/ransack.git',:branch => 'rails4'
+gem 'kaminari'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
